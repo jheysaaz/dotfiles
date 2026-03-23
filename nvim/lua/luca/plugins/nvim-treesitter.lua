@@ -3,31 +3,16 @@ return {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPre", "BufNewFile" },
     build = ":TSUpdate",
+    dependencies = { "windwp/nvim-ts-autotag" },
     config = function()
-      -- import nvim-treesitter plugin
-      local treesitter = require("nvim-treesitter.configs")
-
-      -- configure treesitter
-      treesitter.setup({ -- enable syntax highlighting
-        highlight = {
-          enable = true,
-        },
-        -- enable indentation
-        indent = { enable = true },
-        -- enable autotagging (w/ nvim-ts-autotag plugin)
-        autotag = {
-          enable = true,
-        },
-        -- ensure these language parsers are installed
+      require("nvim-treesitter").setup({
         ensure_installed = {
-          "json",
           "javascript",
           "typescript",
-          "rust",
-          "vue",
           "tsx",
-          "yaml",
+          "vue",
           "json",
+          "yaml",
           "html",
           "css",
           "markdown",
@@ -41,9 +26,11 @@ return {
           "dockerfile",
           "gitignore",
           "query",
-        "go",
-                    "python",
+          "go",
+          "python",
         },
+        highlight = { enable = true },
+        indent = { enable = true },
         incremental_selection = {
           enable = true,
           keymaps = {
@@ -54,6 +41,8 @@ return {
           },
         },
       })
+
+      require("nvim-ts-autotag").setup()
     end,
   },
 }
