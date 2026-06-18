@@ -1,3 +1,5 @@
+set -U fish_greeting ""
+
 # Set environment variables
 set -gx PNPM_HOME "$HOME/.local/share/pnpm"
 
