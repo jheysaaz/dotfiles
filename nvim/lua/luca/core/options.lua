@@ -14,7 +14,6 @@ local options = {
 
   -- UI
   mouse = "a",
-  wrap = true,
   numberwidth = 2,
   showmode = false,
   cursorline = true,
@@ -31,3 +30,10 @@ local options = {
 for o, v in pairs(options) do
   vim.opt[o] = v
 end
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown", "text", "txt", "gitcommit", "help" },
+  callback = function()
+    vim.wo.wrap = true
+  end,
+})

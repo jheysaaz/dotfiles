@@ -1,4 +1,4 @@
-alias rm "rm -rf"
+alias rm "trash"
 alias ll "ls -lh"
 alias lsa "ls -lAh"
 alias md "mkdir -p"

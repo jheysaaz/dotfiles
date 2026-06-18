@@ -1,0 +1,23 @@
+brew "deno"
+brew "fastfetch"
+brew "fish"
+brew "gh"
+brew "neovim"
+brew "opencode"
+brew "pnpm"
+brew "pyenv"
+brew "python@3.14"
+brew "starship"
+brew "thefuck"
+brew "tree"
+brew "bat"
+brew "coreutils"
+brew "htop"
+brew "trash"
+brew "wget"
+
+cask "ghostty"
+
+# Fonts
+cask "font-inter"
+cask "font-jetbrains-mono-nerd-font"

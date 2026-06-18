@@ -31,6 +31,18 @@ return {
       },
     })
 
+    vim.lsp.config("yamlls", {
+      filetypes = { "yaml", "yml" },
+    })
+
+    vim.lsp.config("taplo", {
+      filetypes = { "toml" },
+    })
+
+    vim.lsp.config("marksman", {
+      filetypes = { "markdown", "md" },
+    })
+
     vim.lsp.enable({
       "ts_ls",
       "denols",
@@ -47,15 +59,15 @@ return {
       "marksman",
     })
 
-    vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+    vim.diagnostic.config({
+      virtual_text = { severity = { min = vim.diagnostic.severity.WARN } },
+      update_in_insert = true,
+    })
+
+    vim.api.nvim_create_autocmd("CursorHoldI", {
       callback = function()
         vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" })
       end,
-    })
-
-    vim.diagnostic.config({
-      virtual_text = false,
-      update_in_insert = true,
     })
   end,
 }

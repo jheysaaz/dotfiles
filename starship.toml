@@ -1,10 +1,21 @@
 "$schema" = "https://starship.rs/config-schema.json"
 
-scan_timeout = 60
-command_timeout = 1000
+scan_timeout = 30
+command_timeout = 500
 
 [nodejs]
 detect_extensions = []
 
 [battery]
 disabled = true
+
+[directory]
+truncation_length = 3
+
+[character]
+success_symbol = "[](bold green)"
+error_symbol = "[](bold red)"
+
+[cmd_duration]
+show_milliseconds = false
+min_time = 2_000

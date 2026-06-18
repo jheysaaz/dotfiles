@@ -1,0 +1,4 @@
+font-family = JetBrains Mono
+font-size = 14
+macos-icon = paper
+theme = light:GitHub Light Default,dark:GitHub Dark
