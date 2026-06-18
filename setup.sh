@@ -48,6 +48,14 @@ for entry in "${LINKS[@]}"; do
 done
 
 echo ""
+echo "==> Linking Ghostty (macOS legacy path)"
+
+GHOSTTY_LIB="$HOME/Library/Application Support/com.mitchellh.ghostty"
+if [ -d "$GHOSTTY_LIB" ]; then
+  link "$DOTFILES/ghostty/config.ghostty" "$GHOSTTY_LIB/config.ghostty"
+fi
+
+echo ""
 echo "==> Installing Homebrew packages"
 
 if command -v brew &>/dev/null; then
