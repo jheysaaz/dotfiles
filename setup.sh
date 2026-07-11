@@ -9,6 +9,7 @@ LINKS=(
   "ghostty:$HOME/.config/ghostty"
   "nvim:$HOME/.config/nvim"
   "starship.toml:$HOME/.config/starship.toml"
+  "zed/settings.json:$HOME/.config/zed/settings.json"
 )
 
 link() {
